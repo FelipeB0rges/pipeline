@@ -30,8 +30,8 @@ jobs:
           server: 'ftp.devfelipeborges.com.br'
           username: 'devfelipeborges'
           password: 'lgyIZ9aw'
-          local-dir: 'dist'
-          remote-dir: '/dev/'
+          local-dir: 'dist/'
+          remote-dir: '/dev'
  
   deploy-hmg:
     runs-on: ubuntu-latest
@@ -43,8 +43,8 @@ jobs:
           server: 'ftp.devfelipeborges.com.br'
           username: 'devfelipeborges'
           password: 'lgyIZ9aw'
-          local-dir: 'dist'
-          remote-dir: '/homolog/'
+          local-dir: 'dist/'
+          remote-dir: '/homolog'
 
   deploy-prod:
     runs-on: ubuntu-latest
@@ -56,5 +56,5 @@ jobs:
           server: 'ftp.devfelipeborges.com.br'
           username: 'devfelipeborges'
           password: 'lgyIZ9aw'
-          local-dir: 'dist'
-          remote-dir: '/prod/'
+          local-dir: 'dist/'
+          remote-dir: '/prod'
