@@ -10,7 +10,9 @@ const Counter = () => {
   };
 
   return (
-    <div>
+    <div style={{
+        color: "white",
+    }}>
       <h1>Counter: {count}</h1>
       <button onClick={incrementCount}>Increment</button>
     </div>
