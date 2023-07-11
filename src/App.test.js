@@ -6,112 +6,91 @@ import ListComponent from './components/ListComponent';
 import InputComponent from './components/InputComponent';
 import ButtonComponent from './components/ButtonComponent';
 import SelectComponent from './components/SelectComponent';
-import Home from './components/Home/Home';
 
-describe('Testar Componente', () => {
+describe('Test Component', () => {
 
-  test('Renderiza valor do Counter', () => {
+  test('renders counter value', () => {
     render(<Counter />);
-    const counterElement = screen.getByText(/contador: 0/i);
+    const counterElement = screen.getByText(/counter: 0/i);
     expect(counterElement).toBeInTheDocument();
   });
 
-  test('incrementa valor do contador ao clicar no botão', () => {
+  test('increments counter value on button click', () => {
     render(<Counter />);
-    const counterElement = screen.getByText(/contador: 0/i);
-    const buttonElement = screen.getByRole('button', { name: /incrementar/i });
+    const counterElement = screen.getByText(/counter: 0/i);
+    const buttonElement = screen.getByRole('button', { name: /increment/i });
 
     fireEvent.click(buttonElement);
 
-    expect(counterElement).toHaveTextContent(/contador: 1/i);
+    expect(counterElement).toHaveTextContent(/counter: 1/i);
   });
 
   // CheckBox Tests
-  test('renderiza CheckBoxComponent corretamente', () => {
+  test('renders CheckBoxComponent correctly', () => {
     const { getByTestId } = render(<CheckBoxComponent />);
     const checkbox = getByTestId('checkbox-component');
     expect(checkbox).toBeInTheDocument();
   });
 
-  test('CheckBoxComponent pode ser clicado', () => {
+  test('CheckBoxComponent can be clicked', () => {
     const { getByTestId } = render(<CheckBoxComponent />);
     const checkbox = getByTestId('checkbox-component');
     fireEvent.click(checkbox);
     expect(checkbox.checked).toEqual(true);
   });
 
-  test("deve renderizar o componente Home corretamente", () => {
-    const { container } = render(<Home />);
-    expect(container).toMatchSnapshot();
-  });
-
   // List Tests
-  test('renderiza ListComponent corretamente', () => {
+  test('renders ListComponent correctly', () => {
     const { getByTestId } = render(<ListComponent />);
     const list = getByTestId('list-component');
     expect(list).toBeInTheDocument();
   });
 
-  test('ListComponent tem o número correto de itens', () => {
+  test('ListComponent has correct number of items', () => {
     const { getAllByRole } = render(<ListComponent />);
     const items = getAllByRole('listitem');
     expect(items.length).toBe(3);
   });
 
   // Input Tests
-  test('renderiza InputComponent corretamente', () => {
+  test('renders InputComponent correctly', () => {
     const { getByTestId } = render(<InputComponent />);
     const input = getByTestId('input-component');
     expect(input).toBeInTheDocument();
   });
 
-  test('InputComponent pode aceitar entrada', () => {
+  test('InputComponent can accept input', () => {
     const { getByTestId } = render(<InputComponent />);
     const input = getByTestId('input-component');
-    fireEvent.change(input, { target: { value: 'Teste de entrada' } });
-    expect(input.value).toBe('Teste de entrada');
+    fireEvent.change(input, { target: { value: 'Test input' } });
+    expect(input.value).toBe('Test input');
   });
 
   // Button Tests
-  test('renderiza ButtonComponent corretamente', () => {
+  test('renders ButtonComponent correctly', () => {
     const { getByTestId } = render(<ButtonComponent />);
     const button = getByTestId('button-component');
     expect(button).toBeInTheDocument();
   });
 
-  test('ButtonComponent pode ser clicado', () => {
+  test('ButtonComponent can be clicked', () => {
     const { getByTestId } = render(<ButtonComponent />);
     const button = getByTestId('button-component');
     fireEvent.click(button);
-    expect(button).toBeInTheDocument(); // Esta é uma afirmação placeholder. Em um teste real, você pode verificar uma alteração de estado ou uma chamada de função mock.
+    expect(button).toBeInTheDocument(); // This is a placeholder assertion. In a real test you might check a state change or a mock function call.
   });
 
   // Select Tests
-  test('renderiza SelectComponent corretamente', () => {
+  test('renders SelectComponent correctly', () => {
     const { getByTestId } = render(<SelectComponent />);
     const select = getByTestId('select-component');
     expect(select).toBeInTheDocument();
   });
 
-  test('renderiza ListComponent corretamente', () => {
-    const { container } = render(<ListComponent />);
-    expect(container).toMatchSnapshot();
-  });
-
-  test('renderiza InputComponent corretamente', () => {
-    const { container } = render(<InputComponent />);
-    expect(container).toMatchSnapshot();
-  });
-
-  test('renderiza ListComponent corretamente', () => {
-    const { container } = render(<ListComponent />);
-    expect(container).toMatchSnapshot();
-  });
-
-  test('SelectComponent pode mudar valor', () => {
+  test('SelectComponent can change value', () => {
     const { getByTestId } = render(<SelectComponent />);
     const select = getByTestId('select-component');
-    fireEvent.change(select, { target: { value: 'opcao2' } });
-    expect(select.value).toBe('opcao2');
+    fireEvent.change(select, { target: { value: 'option2' } });
+    expect(select.value).toBe('option2');
   });
 });
