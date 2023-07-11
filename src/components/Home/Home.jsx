@@ -2,6 +2,11 @@ import React from "react";
 import "./Home.scss";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Counter from "../Counter";
+import ButtonComponent from "../ButtonComponent";
+import SelectComponent from "../SelectComponent";
+import CheckBoxComponent from "../CheckboxComponent";
+import ListComponent from "../ListComponent";
+import InputComponent from "../InputComponent";
 
 const Home = () => {
   return (
@@ -25,7 +30,14 @@ const Home = () => {
           <div className="nome">FelipeB0rges</div>
         </div>
       </div>
-      <Counter />
+      <div className="test">
+        <Counter />
+        <ButtonComponent />
+        <SelectComponent />
+        <CheckBoxComponent />
+        <ListComponent />
+        <InputComponent />
+      </div>
     </>
   );
 };
