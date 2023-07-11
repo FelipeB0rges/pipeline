@@ -8,6 +8,7 @@ import CheckBoxComponent from "../CheckboxComponent";
 import ListComponent from "../ListComponent";
 import InputComponent from "../InputComponent";
 
+
 const Home = () => {
   return (
     <>
@@ -17,7 +18,7 @@ const Home = () => {
           color: "white",
         }}
       >
-        V: 1.0.0
+        V: 2.0.0
       </div>
       <div className="home">
         <div
