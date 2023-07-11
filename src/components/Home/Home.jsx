@@ -17,7 +17,7 @@ const Home = () => {
           color: "white",
         }}
       >
-        V: 1.0.0
+        V: 2.0.0
       </div>
       <div className="home">
         <div
