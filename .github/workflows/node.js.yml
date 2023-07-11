@@ -33,20 +33,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy to dev
+      - name: dev
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
           server: 'ftp.devfelipeborges.com.br'
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: './build/'
-          remote-dir: '/dev'
+          remote-dir: './dev/'
 
   deploy-hmg:
     runs-on: ubuntu-latest
     needs: deploy-dev
     steps:
-      - name: Checkout code
+      - name: homolog
         uses: actions/checkout@v2
 
       - name: Deploy to homolog
@@ -56,7 +56,7 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: './build/'
-          remote-dir: '/homolog'
+          remote-dir: './homolog/'
 
   deploy-prod:
     runs-on: ubuntu-latest
@@ -65,11 +65,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy to prod
+      - name: prod
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
           server: 'ftp.devfelipeborges.com.br'
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: './build/'
-          remote-dir: '/prod'
+          remote-dir: './prod/'
