@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy to dev
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
           server: 'ftp.devfelipeborges.com.br'
           username: ${{ secrets.FTP_USER }}
@@ -50,7 +50,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy to homolog
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
           server: 'ftp.devfelipeborges.com.br'
           username: ${{ secrets.FTP_USER }}
@@ -66,7 +66,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy to prod
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
           server: 'ftp.devfelipeborges.com.br'
           username: ${{ secrets.FTP_USER }}
