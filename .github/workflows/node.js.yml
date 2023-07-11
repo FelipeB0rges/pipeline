@@ -29,6 +29,8 @@ jobs:
   deploy-dev:
     runs-on: ubuntu-latest
     needs: build
+    environment: 
+      name: dev
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -45,6 +47,8 @@ jobs:
   deploy-hmg:
     runs-on: ubuntu-latest
     needs: deploy-dev
+    environment: 
+      name: homolog
     steps:
       - name: homolog
         uses: actions/checkout@v2
@@ -61,6 +65,8 @@ jobs:
   deploy-prod:
     runs-on: ubuntu-latest
     needs: deploy-hmg
+    environment: 
+      name: prod
     steps:
       - name: prod
         uses: actions/checkout@v2
