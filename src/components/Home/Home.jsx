@@ -10,6 +10,9 @@ const Home = () => {
     return (
         <>
             <div className="home">
+                <div className="versao">
+                    V: 1.0.0
+                </div>
                 <div className="git" onClick={() => {
                     window.location.href = 'https://github.com/FelipeB0rges'
                 }}>
