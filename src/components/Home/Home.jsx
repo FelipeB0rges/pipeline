@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.scss'
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Counter from '../Counter';
 
 
 
@@ -22,6 +23,7 @@ const Home = () => {
                         FelipeB0rges
                     </div>
                 </div>
+                <Counter/>
             </div>
         </>
 
